@@ -11,10 +11,12 @@ var gulp         = require('gulp')
   , browserSync  = require('browser-sync')
   , handleErrors = require('../util/handle-errors')
   , config       = require('../config')
+  , path         = require('path')
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file, watch) {
 
+  // Create browserify bundler.
   var bundler = browserify({
     entries: [config.sourceDir + 'js/' + file],
     extensions: ['.js', '.jsx'],
@@ -24,6 +26,7 @@ function buildScript(file, watch) {
     fullPaths: true
   });
 
+  // Set up watching.
   if ( watch ) {
     bundler = watchify(bundler);
     bundler.on('update', function() {
@@ -32,8 +35,13 @@ function buildScript(file, watch) {
     });
   }
 
-  bundler.transform(babelify);
+  // Set up Babel.
+  bundler.transform(babelify.configure({
+    sourceMapRelative: path.resolve(__dirname, '../../', config.sourceDir ,'js')
+  }));
+  console.log(path.resolve(__dirname, '../../', config.sourceDir ,'js'));
 
+  // Rebundle.
   function rebundle() {
     var stream = bundler.bundle();
     return stream.on('error', handleErrors)
