@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './navbar'
+import Navbar from './Navbar'
 
 const App = React.createClass({
 
@@ -8,7 +8,7 @@ const App = React.createClass({
       <div class="app">
         <Navbar />
         <p>
-          This is the app.
+          Welcome to machi koro.
         </p>
       </div>
     )
