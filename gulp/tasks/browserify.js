@@ -39,7 +39,6 @@ function buildScript(file, watch) {
   bundler.transform(babelify.configure({
     sourceMapRelative: path.resolve(__dirname, '../../', config.sourceDir ,'js')
   }));
-  console.log(path.resolve(__dirname, '../../', config.sourceDir ,'js'));
 
   // Rebundle.
   function rebundle() {
