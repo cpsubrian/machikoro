@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/cpsubrian/machikoro/issues"
   },
-  "homepage": "https://github.com/cpsubrian/machikoro"
+  "homepage": "https://github.com/cpsubrian/machikoro",
+  "devDependencies": {
+    "babelify": "^5.0.4",
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "react": "^0.13.0-rc2",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
