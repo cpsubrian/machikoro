@@ -1,4 +1,11 @@
 nav {
+  padding: 0 $pad;
   height: 50px;
-  background: #eeeeee;
+  background: $background--dark;
+  color: $font-color--light;
+}
+nav h1 {
+  padding: 0;
+  margin: 0;
+  line-height: 50px;
 }

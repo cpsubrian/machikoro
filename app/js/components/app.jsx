@@ -1,15 +1,16 @@
 import React from 'react'
+import {RouteHandler} from 'react-router'
 import Navbar from './Navbar'
 
 const App = React.createClass({
 
   render () {
     return (
-      <div class="app">
-        <Navbar />
-        <p>
-          Welcome to machi koro.
-        </p>
+      <div className="app">
+        <Navbar/>
+        <div className="page">
+          <RouteHandler/>
+        </div>
       </div>
     )
   }

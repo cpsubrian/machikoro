@@ -1,4 +1,7 @@
 import React from 'react'
-import App from './components/App'
+import Router from 'react-router'
+import routes from './routes'
 
-React.render(<App/>, document.getElementById('app'))
+Router.run(routes, Router.HistoryLocation, (Handler) => {
+  React.render(<Handler/>, document.getElementById('app'))
+})
