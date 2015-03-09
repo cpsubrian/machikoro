@@ -1,6 +1,6 @@
 module.exports = {
 
-  'serverport': 3000,
+  'serverport': 8080,
 
   'scripts': {
     'src': './app/js/**/*.js',
