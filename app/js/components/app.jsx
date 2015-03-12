@@ -1,6 +1,6 @@
 import React from 'react'
 import {RouteHandler} from 'react-router'
-import Navbar from './Navbar'
+import Navbar from './navbar'
 
 const App = React.createClass({
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import {Route, DefaultRoute, NotFoundRoute} from 'react-router'
-import App from './components/App'
-import NotFound from './components/NotFound'
-import Lobby from './components/Lobby'
+import App from './components/app'
+import NotFound from './components/not_found'
+import Lobby from './components/lobby'
 
 const routes = (
   <Route name="app" path="/" handler={App}>
