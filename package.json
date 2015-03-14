@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cpsubrian/machikoro",
   "devDependencies": {
+    "alt": "^0.14.2",
     "babelify": "^5.0.4",
     "browser-sync": "^2.2.2",
     "browserify": "^9.0.3",
