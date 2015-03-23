@@ -8,9 +8,7 @@ const App = React.createClass({
     return (
       <div className="app">
         <Navbar/>
-        <div className="page">
-          <RouteHandler/>
-        </div>
+        <RouteHandler/>
       </div>
     )
   }
