@@ -1,5 +1,7 @@
+import alt from '../alt'
+
 class LobbyActiona {
 
 }
 
-export default LobbyActions
+export default const lobbyActions = alt.createActions(LobbyActions)

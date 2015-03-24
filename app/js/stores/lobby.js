@@ -1,3 +1,5 @@
+import alt from '../alt'
+
 class LobbyStore {
 
   constructor () {
@@ -6,4 +8,4 @@ class LobbyStore {
 
 }
 
-export default LobbyStore;
+export default const lobbyStore = alt.createStore(LobbyStore)
