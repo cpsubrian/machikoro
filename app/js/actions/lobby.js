@@ -4,4 +4,4 @@ class LobbyActiona {
 
 }
 
-export default const lobbyActions = alt.createActions(LobbyActions)
+export default alt.createActions(LobbyActions)

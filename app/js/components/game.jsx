@@ -1,6 +1,6 @@
 import React from 'react'
-import {gameActions} from '../actions'
-import {gameStore} from '../stores'
+import gameActions from '../actions/game'
+import gameStore from '../stores/game'
 
 const Game = React.createClass({
 

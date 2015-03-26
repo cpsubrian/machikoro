@@ -8,4 +8,4 @@ class LobbyStore {
 
 }
 
-export default const lobbyStore = alt.createStore(LobbyStore)
+export default alt.createStore(LobbyStore)

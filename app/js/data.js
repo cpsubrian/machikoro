@@ -8,7 +8,7 @@ export const targets = {
   other: {}
 }
 
-export const types {
+export const types = {
   agriculture: {},
   dairy: {},
   restaurant: {},

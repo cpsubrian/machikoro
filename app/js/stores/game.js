@@ -23,7 +23,7 @@ class GameStore {
   }
 
   addPlayer (player) {
-    _.defaults(player, {
+    this.players.push(_.defaults(player, {
       name: `Player ${this.players.length}`,
       bank: 3,
       landmarks: landmarks.map(function (landmark) {
@@ -37,8 +37,7 @@ class GameStore {
           default: true
         })
       })
-    })
-    this.players.push(player)
+    }))
     return player
   }
 
@@ -48,4 +47,4 @@ class GameStore {
 
 }
 
-export default const gameStore = alt.createStore(GameStore)
+export default alt.createStore(GameStore)

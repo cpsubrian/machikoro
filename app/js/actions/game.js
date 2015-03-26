@@ -8,4 +8,4 @@ class GameActions {
 
 }
 
-export default const gameActions = alt.createActions(GameActions)
+export default alt.createActions(GameActions)
