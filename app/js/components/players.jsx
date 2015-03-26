@@ -1,25 +1,10 @@
 import React from 'react'
+import connectToStores from '../lib/connect_to_stores'
 import gameActions from '../actions/game'
 import gameStore from '../stores/game'
 import Player from './player'
 
-const Players = React.createClass({
-
-  getInitialState () {
-    return gameStore.getState()
-  },
-
-  componentDidMount () {
-    gameStore.listen(this.onChange)
-  },
-
-  componentWillUnmount () {
-    gameStore.unlisten(this.onChange)
-  },
-
-  onChange () {
-    this.setState(this.getInitialState())
-  },
+let Players = React.createClass({
 
   onClickAddPlayer (e) {
     e.preventDefault()
@@ -29,11 +14,11 @@ const Players = React.createClass({
   render () {
     return (
       <div className="players">
-        <h2>Players ({this.state.players.length})</h2>
+        <h2>Players ({this.props.players.length})</h2>
         <ul>
-          {this.state.players.map((player, i) => {
-            return <li key={i}><Player {...player}/></li>
-          })}
+          {this.props.players.map((player, i) =>
+            <li key={i}><Player {...player}/></li>
+          )}
         </ul>
         <button type="button" onClick={this.onClickAddPlayer}>
           Add Player
@@ -42,6 +27,13 @@ const Players = React.createClass({
     )
   }
 
+})
+
+// Wrap componentn to connect it to stores.
+Players = connectToStores(Players, [gameStore], (props) => {
+  return {
+    players: gameStore.getState().players
+  }
 })
 
 export default Players
