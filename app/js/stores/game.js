@@ -18,12 +18,12 @@ class GameStore {
 
     // Setup listeners.
     this.bindListeners({
-      handleAddPlayer: [gameActions.addPlayer]
+      addPlayer: [gameActions.addPlayer]
     })
   }
 
   addPlayer (player) {
-    this.players.push(_.defaults(player, {
+    let newPlayer = _.defaults({}, player, {
       name: `Player ${this.players.length}`,
       bank: 3,
       landmarks: landmarks.map(function (landmark) {
@@ -37,12 +37,8 @@ class GameStore {
           default: true
         })
       })
-    }))
-    return player
-  }
-
-  handleAddPlayer (player) {
-    this.addPlayer(player)
+    })
+    this.players.push(newPlayer)
   }
 
 }

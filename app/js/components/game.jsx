@@ -1,36 +1,34 @@
 import React from 'react'
 import gameActions from '../actions/game'
 import gameStore from '../stores/game'
+import Players from './players'
 
 const Game = React.createClass({
 
-  getInitialState() {
+  getInitialState () {
     return gameStore.getState()
   },
 
-  componentDidMount() {
-    gamestore.listen(this.onChange)
+  componentDidMount () {
+    gameStore.listen(this.onChange)
   },
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     gameStore.unlisten(this.onChange)
   },
 
-  onChange() {
+  onChange () {
     this.setState(this.getInitialState())
   },
 
   render () {
     return (
       <div className="game">
-        <h2>Game</h2>
-        <p>
-          <button type="button">Add Player</button>
-        </p>
+        <Players/>
       </div>
     )
   }
 
-});
+})
 
 export default Game

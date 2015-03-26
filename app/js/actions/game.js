@@ -3,7 +3,7 @@ import alt from '../alt'
 class GameActions {
 
   addPlayer (player) {
-    this.displatch(player)
+    this.dispatch(player)
   }
 
 }

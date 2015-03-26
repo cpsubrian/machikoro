@@ -10,6 +10,6 @@ const Navbar = React.createClass({
     )
   }
 
-});
+})
 
 export default Navbar

@@ -11,6 +11,6 @@ const Lobby = React.createClass({
     )
   }
 
-});
+})
 
 export default Lobby
