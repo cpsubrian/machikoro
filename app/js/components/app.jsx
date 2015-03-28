@@ -2,7 +2,7 @@ import React from 'react'
 import {RouteHandler} from 'react-router'
 import Navbar from './navbar'
 
-const App = React.createClass({
+class App extends React.Component {
 
   render () {
     return (
@@ -13,6 +13,6 @@ const App = React.createClass({
     )
   }
 
-})
+}
 
 export default App

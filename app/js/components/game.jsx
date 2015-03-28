@@ -1,7 +1,7 @@
 import React from 'react'
 import Players from './players'
 
-const Game = React.createClass({
+class Game extends React.Component {
 
   render () {
     return (
@@ -11,6 +11,6 @@ const Game = React.createClass({
     )
   }
 
-})
+}
 
 export default Game

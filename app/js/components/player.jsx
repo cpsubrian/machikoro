@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Player = React.createClass({
+class Player extends React.Component {
 
   render () {
     return (
@@ -11,6 +11,6 @@ const Player = React.createClass({
     )
   }
 
-})
+}
 
 export default Player
