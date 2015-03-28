@@ -1,0 +1,33 @@
+/* Game */
+.game {
+  display: flex;
+  flex-direction: column;
+}
+.game .shop {
+  flex: 0 1 auto;
+  height: 25%;
+}
+.game .players {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.game .players li {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.game .players li .box {
+  flex: 1 1 auto;
+}
+
+/* Player */
+.player .bank {
+  float: right;
+}

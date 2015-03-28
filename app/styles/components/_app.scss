@@ -1,3 +1,11 @@
-.page {
-  padding: $pad;
+html, body, #main, .app {
+  position: relative;
+  height: 100%;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+}
+.app > * {
+  flex: 1 1 auto;
 }

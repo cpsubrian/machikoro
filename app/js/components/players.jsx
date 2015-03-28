@@ -23,17 +23,20 @@ const Players = React.createClass({
 
   render () {
     return (
-      <div className="players">
-        <h2>Players ({this.props.players.length})</h2>
-        <ul>
-          {this.props.players.map((player, i) =>
-            <li key={i}><Player {...player}/></li>
-          )}
-        </ul>
-        <button type="button" onClick={this.onClickAddPlayer}>
-          Add Player
-        </button>
-      </div>
+      <ul className="players">
+        {this.props.players.map((player, i) =>
+          <li key={i}><Player {...player}/></li>
+        )}
+        {(this.props.players.length < 4) ? (
+          <li>
+            <div className="box">
+              <button type="button" onClick={this.onClickAddPlayer}>
+                Add Player
+              </button>
+            </div>
+          </li>
+        ) : ''}
+      </ul>
     )
   }
 })

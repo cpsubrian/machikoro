@@ -1,0 +1,14 @@
+/* Boxes */
+.box {
+  margin: ($pad/2);
+  padding: $pad;
+  background: rgba(0, 0, 0, 0.1);
+}
+.box-title {
+  margin: -$pad;
+  margin-bottom: $pad;
+  padding: $pad/4 $pad/2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: $font-size--xs;
+  color: $font-color--light;
+}
