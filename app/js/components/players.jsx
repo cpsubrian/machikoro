@@ -4,22 +4,22 @@ import gameActions from '../actions/game'
 import gameStore from '../stores/game'
 import Player from './player'
 
-class Players extends React.Component {
+const Players = React.createClass({
 
-  static getStores () {
-    return [gameStore]
-  }
-
-  static getPropsFromStores (props) {
-    return {
-      players: gameStore.getState().players
+  statics: {
+    getStores () {
+      return [gameStore]
+    },
+    getPropsFromStores (props) {
+      return {
+        players: gameStore.getState().players
+      }
     }
-  }
+  },
 
   onClickAddPlayer (e) {
-    e.preventDefault()
     gameActions.addPlayer({})
-  }
+  },
 
   render () {
     return (
@@ -36,7 +36,6 @@ class Players extends React.Component {
       </div>
     )
   }
-
-}
+})
 
 export default connectToStores(Players);

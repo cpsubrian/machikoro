@@ -1,5 +1,4 @@
 import React from 'react'
-import _ from 'underscore'
 
 /**
  * 'Higher Order Component' that controls the props of the wrapped
@@ -15,34 +14,28 @@ const connectToStores = function (Component) {
   const stores = Component.getStores()
 
   // Wrapper Component.
-  class StoreConnection extends React.Component {
+  const StoreConnection = React.createClass({
 
-    constructor (props) {
-      super(props)
-      _.bindAll(this, 'onChange');
-      this.state = Component.getPropsFromStores(props)
-    }
+    getInitialState () {
+      return Component.getPropsFromStores(this.props)
+    },
 
     componentDidMount () {
-      stores.forEach(store =>
-        store.listen(this.onChange)
-      )
-    }
+      stores.forEach(store => store.listen(this.onChange))
+    },
 
     componentWillUnmount () {
-      stores.forEach(store =>
-        store.unlisten(this.onChange)
-      )
-    }
+      stores.forEach(store => store.unlisten(this.onChange))
+    },
 
     onChange () {
       this.setState(Component.getPropsFromStores(this.props))
-    }
+    },
 
     render () {
       return <Component {...this.props} {...this.state} />
     }
-  }
+  })
 
   return StoreConnection
 }

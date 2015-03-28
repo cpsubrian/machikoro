@@ -1,6 +1,6 @@
 import React from 'react'
 
-class NotFound extends React.Component {
+const NotFound = React.createClass({
 
   render () {
     return (
@@ -11,6 +11,6 @@ class NotFound extends React.Component {
     )
   }
 
-}
+})
 
 export default NotFound

@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Lobby extends React.Component {
+const Lobby = React.createClass({
 
   render () {
     return (
@@ -11,6 +11,6 @@ class Lobby extends React.Component {
     )
   }
 
-}
+})
 
 export default Lobby
