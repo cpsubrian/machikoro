@@ -7,18 +7,27 @@ class GameStore {
 
   constructor () {
     // Setup default state.
-    this.started = false
-    this.elapsed = 0
-    this.players = []
-    this.cards = establishments.map(function (card) {
-      return _.extend({}, card, {
-        count: 4
-      })
-    })
+    this.newGame()
 
     // Setup listeners.
     this.bindListeners({
+      startGame: [gameActions.startGame],
+      newGame: [gameActions.newGame],
       addPlayer: [gameActions.addPlayer]
+    })
+  }
+
+  startGame () {
+    this.started = true
+  }
+
+  newGame () {
+    this.started = false
+    this.players = []
+    this.shop = establishments.map(function (card) {
+      return _.extend({}, card, {
+        count: 4
+      })
     })
   }
 

@@ -11,8 +11,11 @@ const Players = React.createClass({
       return [gameStore]
     },
     getPropsFromStores (props) {
+      let gameState = gameStore.getState();
+
       return {
-        players: gameStore.getState().players
+        started: gameState.started,
+        players: gameState.players
       }
     }
   },
@@ -27,7 +30,7 @@ const Players = React.createClass({
         {this.props.players.map((player, i) =>
           <li key={i}><Player {...player}/></li>
         )}
-        {(this.props.players.length < 4) ? (
+        {(!this.props.started && this.props.players.length < 4) ? (
           <li>
             <div className="box">
               <button type="button" onClick={this.onClickAddPlayer}>
